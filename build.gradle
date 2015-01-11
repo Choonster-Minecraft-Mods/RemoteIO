@@ -32,6 +32,8 @@ minecraft {
 def final_display_version = hasProperty("display_version") ? display_version : minecraft_version
 version = "${final_display_version}-${mod_version}.B${System.getenv("BUILD_NUMBER") ?: 0}"
 
+compileJava.options.encoding = 'UTF-8'
+
 processResources {
     // this will ensure that this task is redone when the versions change.
 	inputs.property "mod_version", mod_version
